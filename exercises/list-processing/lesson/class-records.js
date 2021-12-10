@@ -53,7 +53,7 @@ let studentScores = {
 function generateClassRecordSummary(scores) {
   return {
     studentGrades: getStudentGrades(scores),
-    // exams: getExamsInfo(scores)
+    exams: getExamsInfo(scores)
   }
 }
 
@@ -79,8 +79,19 @@ function getLetterGrade(gradePercent) {
   return 'F';
 }
 
-function getExamsInfo(scores) {
-  exams.map(scores => {
+function getExamsInfo(allScores) {
+  let exams = Object.keys(allScores).reduce((exams, currStudent) => {
+    allScores[currStudent].scores.exams.forEach((examScore, i) => {
+      if (!exams[i]) {
+        exams.push([examScore]);
+      } else {
+        exams[i].push(examScore);
+      }
+    });
+    return exams;
+  }, []);
+  
+  return exams.map(scores => {
     return {
       average: arrayAvg(scores),
       minimum: Math.min(...scores),
