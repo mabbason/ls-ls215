@@ -48,9 +48,9 @@ function sentiment(text) {
   let sentiment = numPosWords === numNegWords ? 'Neutral':
     ((numPosWords - numNegWords) > 0 ? 'Positive': 'Negative'); 
 
-  console.log(`There are ${positiveText.length} positive words in the text\n` +
+  console.log(`There are ${numPosWords} positive words in the text\n` +
     `Positive sentiments: ${positiveText.join(', ')}\n\n` +
-    `There are ${negativeText.length} negative words in the text\n` +
+    `There are ${numNegWords} negative words in the text\n` +
     `Negative sentiments: ${negativeText.join(', ')}\n\n` + 
     `The sentiment of the text is ${sentiment}.`);
 }
