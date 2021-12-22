@@ -56,18 +56,14 @@ function mailCount(emailData) {
   let dates = getDateObjects(emails).sort((a, b) => a - b);
   let [ earliestDate, latestDate ] = [ dates[0], dates[dates.length - 1] ];
 
-  console.log(earliestDate.toDateString());
-
-  
-                          
-  
-
+  console.log(`Count of Email: ${count}`);
+  console.log(`Date Range: ${earliestDate.toDateString()} - ${latestDate.toDateString()}`);
 }
 
 function getDateObjects(emails) {
   return emails.map(email => {
     let [ month, day, year ] = [ ...parseDateString(email.Date) ];
-    return new Date(year, month, day);
+    return new Date(year, (month - 1), day);
   });
 }
 
