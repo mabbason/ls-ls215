@@ -18,7 +18,8 @@ When you divide the successive powers of 10 by 13 you get the following remainde
 
 Then the whole pattern repeats again, and again...
 
-Using the specified "sequence" from mod13 (% 13), that is 1, 10, 9, 12, 3, 4. Find and return the stationary number. 
+Using the specified "sequence" from mod13 (% 13), that is 1, 10, 9, 12, 3, 4. 
+Find and return the stationary number. 
 
 The stationary number is found by utilizing the follow method.
 
@@ -27,7 +28,7 @@ the second right most digit with the second left most digit of the number in the
 The cycle goes on and you sum all these products. Repeat this process until the sequence of sums is stationary.
 
 Example:
-What is the remainder when 1234567 is divided by 13?
+What is the stationary number of 1234567?
 
 7      6     5      4     3     2     1  (digits of 1234567 from the right)
 ×      ×     ×      ×     ×     ×     ×  (multiplication)
@@ -46,7 +47,8 @@ and again with 87:
 
 From now on the sequence is stationary (we always get 87) and the remainder of 1234567 by 13 is the same as the remainder of 87 by 13 ( i.e 9).
 
-Call thirt the function which processes this sequence of operations on an integer n (>=0). thirt will return the stationary number.
+Call thirt() the function which processes this sequence of operations on an integer n (>=0). 
+thirt will return the stationary number.
 
 thirt(1234567) calculates 178, then 87, then 87 and returns 87.
 
