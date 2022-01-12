@@ -1,0 +1,23 @@
+{
+  "name": "ls-ls215",
+  "version": "1.0.0",
+  "description": "This repo houses all of my Launch School educational material related LS215.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabbason/ls-ls215.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mabbason/ls-ls215/issues"
+  },
+  "homepage": "https://github.com/mabbason/ls-ls215#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

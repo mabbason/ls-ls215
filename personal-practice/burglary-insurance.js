@@ -1,14 +1,12 @@
 /*
-The insurance guy calls. They were about to pay you all that fortune you've been anxiously waiting for, but they detected further irregularities; the list of stolen items is misformatted and appears to contain other entries that don't belong there. Find and remove them.
+The insurance guy calls. They were about to pay you all that fortune you've been anxiously waiting for, 
+but they detected further irregularities; the list of stolen items is misformatted and appears to 
+contain other entries that don't belong there. Find and remove them.
 
-You receive an object with nested objects with strings as values. Convert their values to number and return an object without the entries that evaluate to NaN.
+You receive an object with nested objects with strings as values. Convert their values to numbers 
+and return an object without the entries that evaluate to NaN.
 
-i: an object with props, each which has an object as its value
-o: same object, but with modified props in the sub-objects
-
-r: 
-- remove any sub-properties whose value evaluates to NaN when converted to a number
-- reformat any sub-properties 'string' numbers to number values
+If the input is not valid or there are no valid entries, return null.
 
 Examples
 
@@ -38,7 +36,9 @@ Examples
       reminder: "dog",
       bottle: "750",
     },
-  }) ➞ {
+  }) 
+  
+--> {
     kitchen: {
       ["gold spoons"]: 900,
       piano: 0,
@@ -65,14 +65,13 @@ Algorithm
     
  Code
 */
-let test = new Date();
-
 
 function findAndRemove(obj) {
-  if (!isValidObject(obj)) return 'Invalid Object';
+  if (!isValidObject(obj)) return null;
   for (let prop in obj) {
     obj[prop] = reformatObject(obj[prop]);
   }
+  if (Object.keys(obj).length === 0) return null;
   return obj;
 };
 
@@ -119,7 +118,5 @@ console.log(findAndRemove({
   },
 } ));
 
-console.log(findAndRemove({}));
-console.log(findAndRemove([]));
-console.log(findAndRemove(test));
-console.log(findAndRemove(null));
+console.log(findAndRemove({})); // null
+console.log(findAndRemove(null)); // null

@@ -8,16 +8,16 @@ If the number is negative, return the related ancestor.
 If positive, return the related descendant.
 You are generation 0. In the case of 0 (male or female), return "me!".
 
-Treat any input as valid which "looks" correct. If there is an invalid input, return "Invalid Input."
+Treat any input as valid which "looks" correct. If there is an invalid input, return null
 
 Examples
-generation(2, "f") ➞ "granddaughter"
+generation(2, "f") // "granddaughter"
 
-generation(-3, "M") ➞ "great grandfather"
+generation(-3, "M") // "great grandfather"
 
-generation('-1', "f") ➞ "mother"
+generation('-1', "f") // "mother"
 
-generation(99, "f") ➞ "great great great great... daughter"
+generation(99, "f") // "great great great great... granddaughter"
 
 */
 //potential solution

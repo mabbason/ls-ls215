@@ -1,5 +1,3 @@
 node_modules/
 *.code-workspace
-session-store.db
 *.yml
-lib/users.sql
